@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alyssia Gaston – Resume</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin:40px; background:#111; color:#fff;}
+    h1, h2 {color:#ff99cc;}
+    a {color:#ff99cc;}
+    ul {margin-left: 20px;}
+    hr {border:1px solid #333; margin:20px 0;}
+  </style>
+</head>
+<body>
+  <h1>Alyssia Gaston</h1>
+  <p>Columbia, SC | aggaston@email.sc.edu</p>
+  <hr>
+
+  <h2>Objective</h2>
+  <p>Motivated University of South Carolina student pursuing a Bachelor of Science in Computer Science. Passionate about technology, problem-solving, and innovation, with a growing interest in aerospace and software development. Seeking opportunities to expand technical skills and gain hands-on project experience.</p>
+
+  <h2>Education</h2>
+  <p><strong>University of South Carolina — Columbia, SC</strong><br>
+     Bachelor of Science in Computer Science (Expected Graduation: 2028)</p>
+
+  <h2>Experience</h2>
+  <ul>
+    <li>
+      <strong>NASA SC Space Grant Consortium — Intern (June 2024 – August 2024)</strong><br>
+      Collaborated with Clemson faculty and NASA engineers to help develop a lunar regolith collection drill.<br>
+      Assisted with research and prototype testing for lunar surface applications.
+    </li>
+    <br>
+    <li>
+      <strong>Conference Assistant — University Housing, UofSC (Summer 2024)</strong><br>
+      Coordinated check-ins, housing logistics, and record-keeping for visiting conference guests.<br>
+      Provided professional customer service and ensured smooth event operations.
+    </li>
+  </ul>
+
+  <h2>Projects</h2>
+  <ul>
+    <li>
+      <strong>Roblox Game Developer — “Drag to Combine”</strong><br>
+      Co-developed a popular Roblox game featuring item combination and roleplay mechanics using Lua scripting.
+    </li>
+    <br>
+    <li>
+      <strong>Personal Commentary Website — “symp4thy_sh00tr” (Neocities)</strong><br>
+      Created a commentary-based website focusing on media and internet culture.<br>
+      Used HTML, CSS, and JavaScript to design a dark, minimalist, eerie aesthetic layout.
+    </li>
+  </ul>
+
+  <h2>Skills</h2>
+  <ul>
+    <li>Programming: Python, Java, HTML, CSS, GitHub</li>
+    <li>Tools: VS Code, Eclipse, Canva</li>
+    <li>Soft Skills: Problem-solving, Creativity, Collaboration, Adaptability</li>
+  </ul>
+
+  <h2>Clubs & Activities</h2>
+  <ul>
+    <li>Member, Black Student Engineers Club (UofSC)</li>
+    <li>Intern, NASA SC Space Grant Consortium Internship Program</li>
+  </ul>
+
+  <hr>
+
+  <p><a href="Alyssia_Gaston_Resume.pdf" download>Download PDF Resume</a></p>
+  <p><a href="index.html">Back to Home Page</a></p>
+</body>
+</html>
