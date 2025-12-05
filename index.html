@@ -5,21 +5,28 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Alyssia Gaston — Portfolio</title>
 
-  <!-- GIRLY STYLES -->
+  <!-- Heart favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>">
+
+  <!-- Pretty script font for headings -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap">
+
+  <!-- GIRLY STYLES + animations -->
   <style>
     :root{
-      --bg:#fff0f7;
+      --bg1: #fff2f8;
+      --bg2: #ffe6f2;
       --card:#fff;
       --accent:#ff66b3;
       --accent-dark:#cc007a;
-      --muted:#7a4a66;
-      --glow: rgba(255,179,217,0.35);
+      --muted:#6b4358;
+      --glow: rgba(255,179,217,0.32);
     }
 
     *{box-sizing:border-box}
     body{
-      background: linear-gradient(180deg, #fff2f8 0%, #ffe6f2 60%);
-      color: #3a1630;
+      background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 60%);
+      color: #33162b;
       font-family: "Helvetica Neue", Arial, sans-serif;
       margin:0;
       padding:24px;
@@ -48,10 +55,18 @@
 
     h1{
       margin:0;
-      font-size:30px;
+      font-size:34px;
       letter-spacing:6px;
       color:var(--accent-dark);
-      font-family: "Trebuchet MS", "Helvetica", sans-serif;
+      font-family: 'Dancing Script', cursive;
+      animation: softGlow 3.6s infinite ease-in-out;
+      text-shadow: 0 0 8px rgba(255,179,217,0.35);
+    }
+
+    @keyframes softGlow {
+      0% { text-shadow: 0 0 6px rgba(255,179,217,0.20); transform: translateY(0); }
+      50% { text-shadow: 0 0 16px rgba(255,204,230,0.32); transform: translateY(-2px); }
+      100% { text-shadow: 0 0 6px rgba(255,179,217,0.20); transform: translateY(0); }
     }
 
     .sub {
@@ -90,13 +105,14 @@
       padding:18px;
       margin:18px 0;
       box-shadow: 0 10px 30px rgba(255,182,210,0.12);
-      border: 1px solid rgba(255,153,204,0.12);
+      border: 1px solid rgba(255,153,204,0.10);
     }
 
     h2{
       margin-top:0;
       color:var(--accent);
-      font-size:20px;
+      font-family: 'Dancing Script', cursive;
+      font-size:22px;
       margin-bottom:8px;
     }
 
@@ -139,14 +155,6 @@
       font-size:13px;
     }
 
-    /* responsive tweaks */
-    @media (max-width:640px){
-      .title { padding:10px 14px; }
-      h1 { font-size:22px; letter-spacing:4px; }
-      .split{ flex-direction:column; }
-    }
-
-    /* cute header decorations */
     .cute-bar {
       height:8px;
       width:100%;
@@ -155,11 +163,42 @@
       margin-top:14px;
       box-shadow: 0 6px 16px rgba(255,179,217,0.16);
     }
+
+    /* floating hearts container */
+    #hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      overflow: hidden;
+    }
+    @keyframes floatHearts {
+      0% { transform: translateY(110vh) scale(0.7); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-20vh) scale(1); opacity: 0; }
+    }
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      color: #ff66b3;
+      animation: floatHearts linear infinite;
+      filter: drop-shadow(0 4px 12px rgba(255,153,204,0.18));
+      opacity: 0.9;
+    }
+
+    /* responsive tweaks */
+    @media (max-width:640px){
+      .title { padding:10px 14px; }
+      h1 { font-size:26px; letter-spacing:4px; }
+      .split{ flex-direction:column; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <!-- floating hearts (no images) -->
+  <div id="hearts" aria-hidden="true"></div>
 
+  <div class="container">
     <header>
       <div class="title" role="img" aria-label="pink banner">
         <h1>ALYSSIA GASTON</h1>
@@ -214,7 +253,6 @@
         <p style="margin-top:12px;">See my Project Management site and sketches here:</p>
         <ul>
           <li><a href="index.html">Project Management Home</a></li>
-          <!-- If you have other project pages, add here -->
         </ul>
       </details>
     </section>
@@ -225,7 +263,6 @@
       <p class="small">Some class code and examples I uploaded to GitHub.</p>
       <ul>
         <li><a href="https://github.com/aggaston2023/word-helper" target="_blank" rel="noopener">CSCE 146 — WordHelper.java</a></li>
-        <!-- add more repo links below if you create them -->
       </ul>
     </section>
 
@@ -240,5 +277,27 @@
       <p>Made with ✿ &nbsp;·&nbsp; University of South Carolina · &nbsp;2025</p>
     </footer>
   </div>
+
+  <!-- floating hearts script (subtle + soft) -->
+  <script>
+    (function(){
+      const container = document.getElementById('hearts');
+      function createHeart(){
+        const el = document.createElement('div');
+        el.className = 'heart';
+        el.textContent = '💗';
+        const size = 12 + Math.random()*28; // size variety
+        el.style.fontSize = size + 'px';
+        el.style.left = (Math.random() * 90) + 'vw';
+        el.style.animationDuration = (5 + Math.random()*4) + 's';
+        el.style.top = '100vh';
+        el.style.opacity = (0.6 + Math.random()*0.35);
+        container.appendChild(el);
+        setTimeout(()=> el.remove(), 10000);
+      }
+      // create hearts occasionally but not too many
+      setInterval(createHeart, 700);
+    })();
+  </script>
 </body>
 </html>
