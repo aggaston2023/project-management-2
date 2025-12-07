@@ -117,7 +117,7 @@
     }
 
     p, li { color:#3a1630; line-height:1.5; font-size:15px; }
-    ul { margin-left:18px; }
+    ul { margin-left:18px; padding-left:0; list-style-position: inside; }
 
     .split {
       display:flex;
@@ -238,8 +238,9 @@
       <h2 id="resume-heading">Resume</h2>
       <p class="small">View my resume online or download the PDF.</p>
       <div class="resume-links">
-        <a class="btn" href="resume.html" target="_blank" rel="noopener">View Resume (HTML)</a>
-        <a class="btn" href="Alyssia_Gaston_Resume.pdf" download>Download PDF</a>
+        <!-- absolute links to the project repo's resume files (safe) -->
+        <a class="btn" href="https://aggaston2023.github.io/project-management-2/resume.html" target="_blank" rel="noopener">View Resume (HTML)</a>
+        <a class="btn" href="https://aggaston2023.github.io/project-management-2/Alyssia_Gaston_Resume.pdf" download>Download PDF</a>
       </div>
     </section>
 
@@ -250,10 +251,10 @@
 
       <details>
         <summary style="cursor:pointer; font-weight:700; color:var(--accent-dark);">Project Management — live site</summary>
-        <p style="margin-top:12px;">See my Project Management site and sketches here:</p>
+        <p style="margin-top:12px;">See my Project Management content (Problem Statement, Affinity Diagram, Sketches):</p>
         <ul>
-          <!-- FIXED: link now points to the actual project-management-2 page -->
-          <li><a href="project-management-2/index.html">Project Management Home</a></li>
+          <!-- absolute URL to the project-management-2 site so it definitely works -->
+          <li><a href="https://aggaston2023.github.io/project-management-2/" target="_blank" rel="noopener">Project Management Home (Problem Statement, Affinity Diagram, Sketches)</a></li>
         </ul>
       </details>
     </section>
@@ -263,10 +264,11 @@
       <h2 id="code-heading">Code Repositories</h2>
       <p class="small">Some class code and examples I uploaded to GitHub.</p>
       <ul>
-        <!-- Added a small icon that links to the repo (satisfies repo image requirement) -->
         <li>
-          <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" alt="repo" style="width:28px; vertical-align:middle; margin-right:8px;">
-          <a href="https://github.com/aggaston2023/word-helper" target="_blank" rel="noopener">CSCE 146 — WordHelper.java</a>
+          <a href="https://github.com/aggaston2023/word-helper" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+            <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" alt="repo" style="width:28px; vertical-align:middle; margin-right:8px;">
+            CSCE 146 — WordHelper.java
+          </a>
         </li>
       </ul>
     </section>
