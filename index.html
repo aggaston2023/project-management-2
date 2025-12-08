@@ -1,312 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Alyssia Gaston — Portfolio</title>
-
-  <!-- Heart favicon (inline SVG) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>">
-
-  <!-- Pretty script font for headings -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap">
-
-  <!-- GIRLY STYLES + animations -->
+  <title>Project Management — Alyssia Gaston</title>
   <style>
-    :root{
-      --bg1: #fff2f8;
-      --bg2: #ffe6f2;
-      --card:#fff;
-      --accent:#ff66b3;
-      --accent-dark:#cc007a;
-      --muted:#6b4358;
-      --glow: rgba(255,179,217,0.32);
-    }
-
-    *{box-sizing:border-box}
-    body{
-      background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 60%);
-      color: #33162b;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      margin:0;
-      padding:24px;
-      -webkit-font-smoothing:antialiased;
-    }
-
-    .container{
-      max-width:1000px;
-      margin: 0 auto 60px;
-      padding: 18px;
-    }
-
-    header{
-      text-align:center;
-      margin-bottom:18px;
-    }
-
-    .title {
-      display:inline-block;
-      background: linear-gradient(90deg,#ffd6ec,#ffc4e6);
-      padding: 14px 22px;
-      border-radius: 30px;
-      box-shadow: 0 6px 18px var(--glow);
-      border: 2px solid rgba(204,0,122,0.12);
-    }
-
-    h1{
-      margin:0;
-      font-size:34px;
-      letter-spacing:6px;
-      color:var(--accent-dark);
-      font-family: 'Dancing Script', cursive;
-      animation: softGlow 3.6s infinite ease-in-out;
-      text-shadow: 0 0 8px rgba(255,179,217,0.35);
-    }
-
-    @keyframes softGlow {
-      0% { text-shadow: 0 0 6px rgba(255,179,217,0.20); transform: translateY(0); }
-      50% { text-shadow: 0 0 16px rgba(255,204,230,0.32); transform: translateY(-2px); }
-      100% { text-shadow: 0 0 6px rgba(255,179,217,0.20); transform: translateY(0); }
-    }
-
-    .sub {
-      margin-top:8px;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    nav{
-      margin-top:14px;
-      text-align:center;
-    }
-
-    nav a{
-      color: var(--accent-dark);
-      text-decoration:none;
-      font-weight:700;
-      margin: 0 10px;
-      padding:8px 12px;
-      border-radius:12px;
-      transition: all .18s ease;
-    }
-    nav a:hover{ background: rgba(204,0,122,0.06); transform:translateY(-2px); }
-
-    .flower {
-      text-align:center;
-      font-size:20px;
-      color:var(--accent-dark);
-      margin-top:10px;
-      margin-bottom:14px;
-    }
-
-    section.card{
-      background: var(--card);
-      border-radius:14px;
-      padding:18px;
-      margin:18px 0;
-      box-shadow: 0 10px 30px rgba(255,182,210,0.12);
-      border: 1px solid rgba(255,153,204,0.10);
-    }
-
-    h2{
-      margin-top:0;
-      color:var(--accent);
-      font-family: 'Dancing Script', cursive;
-      font-size:22px;
-      margin-bottom:8px;
-    }
-
-    p, li { color:#3a1630; line-height:1.5; font-size:15px; }
-    ul { margin-left:18px; padding-left:0; list-style-position: inside; }
-
-    .split {
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-
-    .col{
-      flex:1 1 300px;
-    }
-
-    .resume-links{
-      text-align:center;
-      margin-top:12px;
-    }
-
-    .btn{
-      display:inline-block;
-      background: linear-gradient(90deg,#ff7fbf,#ff66b3);
-      color:white;
-      padding:10px 14px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow: 0 8px 20px rgba(255,118,176,0.18);
-      margin:6px;
-    }
-
-    .small { font-size:13px; color:#6b4358; }
-
-    footer {
-      text-align:center;
-      margin-top:30px;
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .cute-bar {
-      height:8px;
-      width:100%;
-      border-radius: 8px;
-      background: linear-gradient(90deg,#ffd6ec 0%, #ffe6f2 50%, #fff2f8 100%);
-      margin-top:14px;
-      box-shadow: 0 6px 16px rgba(255,179,217,0.16);
-    }
-
-    /* floating hearts container */
-    #hearts {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 999;
-      overflow: hidden;
-    }
-    @keyframes floatHearts {
-      0% { transform: translateY(110vh) scale(0.7); opacity: 0; }
-      10% { opacity: 1; }
-      100% { transform: translateY(-20vh) scale(1); opacity: 0; }
-    }
-    .heart {
-      position: absolute;
-      font-size: 20px;
-      color: #ff66b3;
-      animation: floatHearts linear infinite;
-      filter: drop-shadow(0 4px 12px rgba(255,153,204,0.18));
-      opacity: 0.9;
-    }
-
-    /* responsive tweaks */
-    @media (max-width:640px){
-      .title { padding:10px 14px; }
-      h1 { font-size:26px; letter-spacing:4px; }
-      .split{ flex-direction:column; }
-    }
+    body{font-family:system-ui,Arial;line-height:1.45;margin:20px;background:#fff;color:#111}
+    .wrap{max-width:900px;margin:0 auto;padding:18px}
+    header{margin-bottom:18px}
+    h1{font-family:"Dancing Script",cursive;font-size:34px;margin:0;color:#cc007a}
+    h2{color:#e84aa8;margin-top:18px}
+    .card{border-radius:10px;border:1px solid #eee;padding:14px;margin:14px 0;background:#fff}
+    table{border-collapse:collapse;width:100%;max-width:700px}
+    th,td{border:1px solid #bbb;padding:10px;text-align:left}
+    th{background:#ffe6f2;color:#6b4358}
+    .small{color:#555;font-size:14px}
+    .sketch-img{max-width:420px;border:1px solid #ddd;padding:4px;background:#fafafa}
+    a.btn{display:inline-block;margin:8px 6px;padding:8px 12px;background:#ff66b3;color:#fff;border-radius:999px;text-decoration:none}
+    footer{margin-top:26px;color:#777;font-size:13px}
   </style>
+  <!-- optional script font if internet allows it -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- floating hearts (no images) -->
-  <div id="hearts" aria-hidden="true"></div>
-
-  <div class="container">
+  <div class="wrap">
     <header>
-      <div class="title" role="img" aria-label="pink banner">
-        <h1>ALYSSIA GASTON</h1>
-      </div>
-      <div class="sub">Columbia, SC &nbsp;•&nbsp; aggaston@email.sc.edu</div>
-      <div class="flower">✿ ✿ ✿</div>
-
-      <nav aria-label="main navigation">
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#projects">Projects</a>
-        <a href="#code">Code</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="cute-bar" aria-hidden="true"></div>
+      <h1>Project Management — Study Planner</h1>
+      <p class="small">Alyssia Gaston — Project Management Class</p>
     </header>
 
-    <!-- ABOUT -->
-    <section id="about" class="card" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Me</h2>
-      <div class="split">
-        <div class="col">
-          <p><strong>Alyssia Gaston</strong></p>
-          <p>Computer Science major &amp; Aerospace Engineering minor at the University of South Carolina. Expected graduation: <strong>2028</strong>. I enjoy building small projects, learning accessibility design, and making clean, functional web pages with a soft aesthetic.</p>
-        </div>
-        <div class="col">
-          <p class="small"><strong>Location:</strong> Columbia, SC</p>
-          <p class="small"><strong>Email:</strong> aggaston@email.sc.edu</p>
-          <p class="small"><strong>Interests:</strong> aerospace systems, accessibility, front-end web, cozy design</p>
-        </div>
-      </div>
+    <section id="problem-statement" class="card" aria-labelledby="ps-heading">
+      <h2 id="ps-heading">Problem Statement</h2>
+      <p>Many college students struggle to manage their study time effectively due to distractions and poor planning. This problem leads to increased stress and lower academic performance. The goal of this project is to develop a simple web tool that helps students plan and stay on schedule.</p>
     </section>
 
-    <!-- RESUME -->
-    <section id="resume" class="card" aria-labelledby="resume-heading">
-      <h2 id="resume-heading">Resume</h2>
-      <p class="small">View my resume online or download the PDF.</p>
-      <div class="resume-links">
-        <!-- absolute links to the project repo's resume files (safe) -->
-        <a class="btn" href="https://aggaston2023.github.io/project-management-2/resume.html" target="_blank" rel="noopener">View Resume (HTML)</a>
-        <a class="btn" href="https://aggaston2023.github.io/project-management-2/Alyssia_Gaston_Resume.pdf" download>Download PDF</a>
-      </div>
+    <section id="affinity" class="card" aria-labelledby="aff-heading">
+      <h2 id="aff-heading">Affinity Diagram</h2>
+      <p class="small">Grouped ideas and observations</p>
+      <table aria-label="Affinity diagram">
+        <tr><th>Category</th><th>Ideas / Notes</th></tr>
+        <tr><td>Causes</td><td>Too many distractions, poor planning, no schedule</td></tr>
+        <tr><td>Effects</td><td>Missed deadlines, stress, burnout</td></tr>
+        <tr><td>Solutions</td><td>Study planner, phone lock app, Pomodoro timer</td></tr>
+      </table>
     </section>
 
-    <!-- PROJECTS / PM stuff -->
-    <section id="projects" class="card" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Project Management & Sketches</h2>
-      <p class="small">Selected project pages and sketches for class work.</p>
+    <section id="sketches" class="card" aria-labelledby="sk-heading">
+      <h2 id="sk-heading">Sketches</h2>
+      <p class="small">Below is one of my product sketches (sticky-note style). Click the PDF link to view all sketches.</p>
 
-      <details>
-        <summary style="cursor:pointer; font-weight:700; color:var(--accent-dark);">Project Management — live site</summary>
-        <p style="margin-top:12px;">See my Project Management content (Problem Statement, Affinity Diagram, Sketches):</p>
-        <ul>
-          <!-- absolute URL to the project-management-2 site so it definitely works -->
-          <li><a href="https://aggaston2023.github.io/project-management-2/" target="_blank" rel="noopener">Project Management Home (Problem Statement, Affinity Diagram, Sketches)</a></li>
-        </ul>
-      </details>
-    </section>
+      <!-- image file you uploaded (make sure file is named exactly 'sketch1.jpg' or change) -->
+      <p><img src="sketch1.jpg" alt="Sketch 1 — Dashboard sticky note" class="sketch-img"></p>
 
-    <!-- CODE -->
-    <section id="code" class="card" aria-labelledby="code-heading">
-      <h2 id="code-heading">Code Repositories</h2>
-      <p class="small">Some class code and examples I uploaded to GitHub.</p>
-      <ul>
-        <li>
-          <a href="https://github.com/aggaston2023/word-helper" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
-            <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" alt="repo" style="width:28px; vertical-align:middle; margin-right:8px;">
-            CSCE 146 — WordHelper.java
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="card" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <p>If you need to reach me, email is best:</p>
-      <p><a href="mailto:aggaston@email.sc.edu" class="btn">Email Alyssia</a></p>
+      <p>
+        <a class="btn" href="sketches.pdf" target="_blank" rel="noopener">View All Sketches (PDF)</a>
+        <a class="btn" href="https://aggaston2023.github.io" target="_blank" rel="noopener">Return to Portfolio</a>
+      </p>
     </section>
 
     <footer>
-      <p>Made with ✿ &nbsp;·&nbsp; University of South Carolina · &nbsp;2025</p>
+      <p class="small">Hosted on GitHub Pages — aggaston2023 • 2025</p>
     </footer>
   </div>
-
-  <!-- floating hearts script (subtle + soft) -->
-  <script>
-    (function(){
-      const container = document.getElementById('hearts');
-      function createHeart(){
-        const el = document.createElement('div');
-        el.className = 'heart';
-        el.textContent = '💗';
-        const size = 12 + Math.random()*28; // size variety
-        el.style.fontSize = size + 'px';
-        el.style.left = (Math.random() * 90) + 'vw';
-        el.style.animationDuration = (5 + Math.random()*4) + 's';
-        el.style.top = '100vh';
-        el.style.opacity = (0.6 + Math.random()*0.35);
-        container.appendChild(el);
-        setTimeout(()=> el.remove(), 10000);
-      }
-      // create hearts occasionally but not too many
-      setInterval(createHeart, 700);
-    })();
-  </script>
 </body>
 </html>
-
-
